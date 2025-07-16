@@ -15,15 +15,15 @@ export function Footer({ lang }: { lang: string }) {
   const i18n = getI18nInstance(lang)
   const socialMedias = [
     {
-      href: env.public.UTXO_STACK_TWITTER_URL,
+      href: env.public.CKB_DEV_REL_TWITTER_URL,
       icon: <TwitterSVG w={{ base: '24px', lg: '32px' }} h={{ base: '24px', lg: '32px' }} />,
     },
     {
-      href: env.public.CKB_CELL_GITHUB_URL,
+      href: env.public.RGBPP_ORG_GITHUB_URL,
       icon: <GithubSVG w={{ base: '24px', lg: '32px' }} h={{ base: '24px', lg: '32px' }} />,
     },
     {
-      href: env.public.UTXO_STACK_MEDIUM_URL,
+      href: env.public.NERVOS_NETWORK_MEDIUM_URL,
       icon: <MediumIcon w={{ base: '24px', lg: '32px' }} h={{ base: '24px', lg: '32px' }} />,
     },
   ]
@@ -98,6 +98,9 @@ export function Footer({ lang }: { lang: string }) {
             <VStack w={{ base: 'auto', lg: '100%' }} gap="30px" alignItems="start">
               <Heading fontSize={{ base: '16px', lg: '18px' }}>{t(i18n)`RGB++`}</Heading>
               <VStack w="100%" gap="16px" color="text.third" alignItems="start">
+                <Link href={"https://rgbpp.com"} _hover={{ textDecoration: 'underline' }}>
+                  {t(i18n)`Official Website`}
+                </Link>
                 <Link href={env.public.RGBPP_WHITE_PAPER_URL} _hover={{ textDecoration: 'underline' }}>
                   {t(i18n)`Whitepaper`}
                 </Link>
@@ -115,11 +118,11 @@ export function Footer({ lang }: { lang: string }) {
                 <Link href={env.public.CKB_URL} _hover={{ textDecoration: 'underline' }}>
                   {t(i18n)`Nervos CKB`}
                 </Link>
+                <Link href={`https://ckbeco.fund/`} _hover={{ textDecoration: 'underline' }}>
+                  {t(i18n)`CKB Eco Fund`}
+                </Link>
                 <Link href={env.public.UTXO_STACK_URL} _hover={{ textDecoration: 'underline' }}>
                   {t(i18n)`UTXO Stack`}
-                </Link>
-                <Link href={`https://www.rgbppfans.com`} _hover={{ textDecoration: 'underline' }}>
-                  RGB++fans
                 </Link>
               </VStack>
             </VStack>
