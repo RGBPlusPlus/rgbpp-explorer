@@ -14,19 +14,19 @@ const publicEnvSchema = z.object({
   IS_MAINNET: zodStringBoolean.default('true'),
   CKB_URL: z.string().default('https://nervos.org'),
   UTXO_STACK_URL: z.string().default('https://utxostack.network'),
-  RGBPP_WHITE_PAPER_URL: z.string().default('https://github.com/ckb-cell/RGBPlusPlus-design'),
+  RGBPP_WHITE_PAPER_URL: z
+    .string()
+    .default('https://github.com/RGBPlusPlus/RGBPlusPlus-design/blob/main/docs/light-paper-en.md'),
   RGBPP_SCRIPT_URL: z
     .string()
-    .default('https://github.com/ckb-cell/RGBPlusPlus-design/blob/main/docs/lockscript-design-prd-en.md'),
-  RGBPP_SDK_URL: z.string().default('https://github.com/ckb-cell/rgbpp-sdk'),
-  UTXO_STACK_TWITTER_URL: z.string().default('https://x.com/utxostack'),
-  CKB_CELL_GITHUB_URL: z.string().default('https://github.com/utxostack'),
-  UTXO_STACK_MEDIUM_URL: z.string().default('https://medium.com/@utxostack'),
+    .default('https://github.com/RGBPlusPlus/RGBPlusPlus-design/blob/main/docs/lockscript-design-prd-en.md'),
+  RGBPP_SDK_URL: z.string().default('https://github.com/ckb-devrel/ccc/tree/rgbpp-sdk/packages/rgbpp'),
+  CKB_DEV_REL_TWITTER_URL: z.string().default('https://x.com/CKBDevrel'),
+  RGBPP_ORG_GITHUB_URL: z.string().default('https://github.com/RGBPlusPlus'),
+  NERVOS_NETWORK_MEDIUM_URL: z.string().default('https://medium.com/@nervosnetwork'),
   RGBPP_EXPLORER_TESTNET_URL: z.string().default('https://testnet.explorer.rgbpp.io'),
   RGBPP_EXPLORER_MAINNET_URL: z.string().default('https://explorer.rgbpp.io'),
-  RGBPP_DOMAINS: z
-    .string()
-    .default('explorer.rgbpp.io,testnet.explorer.rgbpp.io'),
+  RGBPP_DOMAINS: z.string().default('explorer.rgbpp.io,testnet.explorer.rgbpp.io'),
 })
 
 const sharedEnvSchema = z.object({
