@@ -23,7 +23,7 @@
     "@lingui/core": "^4.11.2",
     "@lingui/macro": "^4.11.2",
     "@lingui/react": "^4.11.2",
-    "@magickbase/p": "^0.0.5",
+    "@magickbase/p": "^0.0.6",
     "@nervosnetwork/ckb-sdk-utils": "^0.109.2",
     "@next/third-parties": "^14.2.13",
     "@rgbpp-sdk/ckb": "^0.5.0",

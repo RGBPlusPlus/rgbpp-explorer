@@ -9,8 +9,8 @@ import { Heading } from '@/components/ui'
 import { useRgbppTransactions } from '@/hooks/useRgbppData'
 
 export default function Page() {
-  const { data: rgbppLatestL1Transactions, isLoading } = useRgbppTransactions()
-  console.log(rgbppLatestL1Transactions)
+  const { data: rgbppLatestL1Transactions, isLoading } = useRgbppTransactions(1, 10)
+ 
   return (
     <Grid gridTemplateColumns="repeat(2, 1fr)" w="100%" maxW="content" p={{ base: '20px', xl: '30px' }} gap="30px">
       <Info />
@@ -23,7 +23,10 @@ export default function Page() {
             <Loading />
           </Center>
         ) : (
-        <ExplorerTxList transactions={rgbppLatestL1Transactions || []} type="btc" />
+        <ExplorerTxList transactions={rgbppLatestL1Transactions?.data?.map((tx: any) => ({
+          ...tx,
+          network: 'btc'
+        })) as any || []} type="btc" />
         )}
       </Box>
     </Grid>

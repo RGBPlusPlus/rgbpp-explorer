@@ -23,7 +23,7 @@ export function BtcAssetsList({ address }: { address: string }) {
             <Tabs.Root variant="line" defaultValue="Coins">
               <Tabs.List>
                 <Tabs.Trigger value="Coins">Coins</Tabs.Trigger>
-                <Tabs.Trigger value="Dobs">Dobs</Tabs.Trigger>
+                {/* <Tabs.Trigger value="Dobs">Dobs</Tabs.Trigger> */}
               </Tabs.List>
               <Tabs.Content value="Coins">
               <CoinListUI coinList={coinList?.assetInfo?.assets ?? []} />

@@ -3,7 +3,7 @@ import { useLingui } from '@lingui/react'
 import dayjs from 'dayjs'
 
 import { AssetsCountChart, AssetsCountStats } from '@/components/charts/assets-count-chart'
-import { ComingSoonChart } from '@/components/charts/coming-soon-chart'
+// import { ComingSoonChart } from '@/components/charts/coming-soon-chart'
 import { DailyTransactionsCountChart, DailyTransactionsCountStats } from '@/components/charts/daily-transactions-count-chart'
 import { HoldersCountChart, HoldersCountStats } from '@/components/charts/holders-count-chart'
 import { TransactionsCountChart, TransactionsCountStats } from '@/components/charts/transactions-count-chart'
@@ -107,28 +107,29 @@ export function useCharts() {
           ])
         }
       },
-    },
-    {
-      id: 'occupied-ckb',
-      title: t(i18n)`Total Occupied CKB`,
-      description: t(i18n)`The total amount of CKB occupied by RGB++ assets`,  
-      category: 'utilization',
-      chartRender: ComingSoonChart, 
-      statsRender: undefined,
-      useData: () => ({ data: null, isLoading: false }),
-      prepareDownloadData: (data) => {
-        return {
-          filename: 'rgbpp-assets-transactions',
-          headers: ['Date', 'xUDT(FT)', 'DOB(NFT)', 'Total'],
-          rows: data?.map((item: IssueCountChartDataPoint) => [
-            dayjs(item.timestamp).format(DATE_TEMPLATE),
-            item.xudt,
-            item.dob,
-            item.total
-          ])
-        }
-      },
-    },
+    }
+    ,
+    // {
+    //   id: 'occupied-ckb',
+    //   title: t(i18n)`Total Occupied CKB`,
+    //   description: t(i18n)`The total amount of CKB occupied by RGB++ assets`,  
+    //   category: 'utilization',
+    //   chartRender: ComingSoonChart, 
+    //   statsRender: undefined,
+    //   useData: () => ({ data: null, isLoading: false }),
+    //   prepareDownloadData: (data) => {
+    //     return {
+    //       filename: 'rgbpp-assets-transactions',
+    //       headers: ['Date', 'xUDT(FT)', 'DOB(NFT)', 'Total'],
+    //       rows: data?.map((item: IssueCountChartDataPoint) => [
+    //         dayjs(item.timestamp).format(DATE_TEMPLATE),
+    //         item.xudt,
+    //         item.dob,
+    //         item.total
+    //       ])
+    //     }
+    //   },
+    // },
   ]
 
   const chartCategories: ChartCategory[] = [
@@ -137,11 +138,11 @@ export function useCharts() {
       title: t(i18n)`RGB++ Assets Overview & Activity`,
       charts: charts.filter(chart => chart.category === 'overview'),
     },
-    {
-      id: 'utilization',
-      title: t(i18n)`RGB++ Assets Utilization`,
-      charts: charts.filter(chart => chart.category === 'utilization'),
-    },
+    // {
+    //   id: 'utilization',
+    //   title: t(i18n)`RGB++ Assets Utilization`,
+    //   charts: charts.filter(chart => chart.category === 'utilization'),
+    // },
   ]
 
   const getChartById = (id: string) => charts.find(chart => chart.id === id)

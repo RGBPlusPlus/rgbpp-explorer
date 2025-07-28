@@ -19,7 +19,6 @@ import { RgbppTransaction } from '@/types/graphql'
 
 export function LatestTxnListUI({ txs }: { txs: RgbppTransaction[] }) {
   const isMd = useBreakpoints('md')
-  const isLg = useBreakpoints('lg')
 
   if (!isMd) {
     return txs.map((tx) => {

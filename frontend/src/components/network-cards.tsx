@@ -5,11 +5,11 @@ import { ReactNode } from 'react'
 import { Box, Grid, HStack, VStack } from 'styled-system/jsx'
 
 import ArrowIcon from '@/assets/arrow.svg'
-import BchIcon from '@/assets/chains/bch.svg'
+// import BchIcon from '@/assets/chains/bch.svg'
 import BtcIcon from '@/assets/chains/btc.svg'
 import CkbIcon from '@/assets/chains/ckb.svg'
-import DogeIcon from '@/assets/chains/doge.svg'
-import UtxoStackIcon from '@/assets/chains/utxo-stack.svg'
+// import DogeIcon from '@/assets/chains/doge.svg'
+// import UtxoStackIcon from '@/assets/chains/utxo-stack.svg'
 import Link from '@/components/ui/link'
 import { Text } from '@/components/ui/primitives/text'
 import { useBtcInfo, useCkbInfo } from '@/hooks/useRgbppData'
@@ -33,7 +33,7 @@ export function NetworkCards() {
   const {data:ckbChainInfo} = useCkbInfo()
   
   return (
-    <Grid w="100%" gridTemplateColumns={{ base: '100%', sm: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }}>
+    <Grid w="100%" gridTemplateColumns={{ base: '100%', sm: 'repeat(2, 1fr)', lg: 'repeat(2, 1fr)' }}>
       <Link
         href="/explorer/btc"
         display="flex"
@@ -95,12 +95,12 @@ export function NetworkCards() {
             },
             {
               label: <Trans>Txns(24H)</Trans>,
-              value: formatNumber(ckbChainInfo?.tipBlock?.number ?? 0),
+              value: formatNumber(ckbChainInfo?.txCountInLast24h ?? 0),
             },
           ]}
         />
       </Link>
-      <VStack
+       {/* <VStack
         gap="40px"
         bg="bg.card"
         rounded="8px"
@@ -109,7 +109,7 @@ export function NetworkCards() {
         fontSize="14px"
         gridColumn={{ base: 'auto', sm: '1/3', lg: 'auto' }}
       >
-        <HStack gap="24px" fontWeight="semibold" w="100%" justify="center">
+       <HStack gap="24px" fontWeight="semibold" w="100%" justify="center">
           <HStack>
             <DogeIcon w="32px" h="32px" />
             <Text>DOGE</Text>
@@ -118,15 +118,15 @@ export function NetworkCards() {
             <BchIcon w="32px" h="32px" />
             <Text>BCH</Text>
           </HStack>
-          {/* <HStack whiteSpace="nowrap">
+          <HStack whiteSpace="nowrap">
             <UtxoStackIcon w="32px" h="32px" />
             <Text>UTXO Stack</Text>
-          </HStack> */}
-        </HStack>
+          </HStack>
+        </HStack> 
         <Box fontWeight="semibold" py="10px" px="40px" rounded="100px" bg="bg.input" mx="auto">
           <Trans>Coming</Trans>
         </Box>
-      </VStack>
+      </VStack>*/}
     </Grid>
   )
 }

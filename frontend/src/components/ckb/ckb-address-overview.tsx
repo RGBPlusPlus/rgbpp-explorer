@@ -46,18 +46,19 @@ export function CkbAddressOverview({ ckbAddress }: { ckbAddress: string }) {
                   symbol={<Trans>CKB</Trans>}
                 />
               </OverviewInfoItem>
-              <OverviewInfoItem label={<Trans>Occupied</Trans>}>
+              
+            </OverviewInfo>
+            <OverviewInfo>
+            <OverviewInfoItem label={<Trans>Occupied</Trans>}>
                 <OverflowAmount
                   amount={formatNumber(shannonToCKB(ckbInfo.balance?.occupied))}
                   symbol={<Trans>CKB</Trans>}
                 />
               </OverviewInfoItem>
-            </OverviewInfo>
-            <OverviewInfo>
               <OverviewInfoItem label={<Trans>Txns</Trans>} formatNumber>
                 {ckbInfo.tx?.count}
               </OverviewInfoItem>
-              <OverviewInfoItem label={<Trans>L2 RGB++ Assets</Trans>} unsupported />
+              {/* <OverviewInfoItem label={<Trans>L2 RGB++ Assets</Trans>} unsupported /> */}
             </OverviewInfo>
           </>
         ) : null}

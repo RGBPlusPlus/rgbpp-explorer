@@ -24,10 +24,10 @@ export default function Layout({
             href: '/assets/coins',
             label: t(i18n)`Coins`,
           },
-          {
-            href: '/assets/dobs',
-            label: t(i18n)`DOBs`,
-          },
+          // {
+          //   href: '/assets/dobs',
+          //   label: t(i18n)`DOBs`,
+          // },
         ]}
         maxW="content"
         w="100%"

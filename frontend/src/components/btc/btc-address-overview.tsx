@@ -39,6 +39,12 @@ export function BtcAddressOverview({ btcAddress }: { btcAddress: string }) {
               <OverviewInfoItem label={<Trans>BTC Balance</Trans>}>
                 <OverflowAmount amount={formatNumber(satsToBtc(btcInfo.satoshis))} symbol={<Trans>BTC</Trans>} />
               </OverviewInfoItem>
+
+              <OverviewInfoItem label={<Trans>Txns</Trans>} formatNumber>
+                {btcInfo.txCount}
+              </OverviewInfoItem>
+            </OverviewInfo>
+            <OverviewInfo>
               <OverviewInfoItem label={<Trans>Confirmed</Trans>}>
                 <OverflowAmount
                   amount={formatNumber(satsToBtc(btcInfo.satoshis).minus(btcInfo.pendingSatoshis))}
@@ -48,12 +54,8 @@ export function BtcAddressOverview({ btcAddress }: { btcAddress: string }) {
               <OverviewInfoItem label={<Trans>Unconfirmed</Trans>}>
                 <OverflowAmount amount={formatNumber(satsToBtc(btcInfo.pendingSatoshis))} symbol={<Trans>BTC</Trans>} />
               </OverviewInfoItem>
-            </OverviewInfo>
-            <OverviewInfo>
-              <OverviewInfoItem label={<Trans>Txns</Trans>} formatNumber>
-                {btcInfo.txCount}
-              </OverviewInfoItem>
-              <OverviewInfoItem label={<Trans>L1 RGB++ Assets</Trans>} unsupported />
+
+              {/* <OverviewInfoItem label={<Trans>L1 RGB++ Assets</Trans>} unsupported />  */}
             </OverviewInfo>
           </>
         ) : null}

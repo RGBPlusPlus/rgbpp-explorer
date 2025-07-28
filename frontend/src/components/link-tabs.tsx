@@ -24,7 +24,6 @@ export function LinkTabs({ links, ...props }: LinkTabsProps) {
   if (!hasActive) {
     return null
   }
-
   return (
     <HStack gap="20px" {...props}>
       {links.map((link) => {

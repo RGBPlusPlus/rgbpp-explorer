@@ -28,9 +28,9 @@ export function CKBAssetsList({ address }: { address: string }) {
             <Tabs.Trigger value="Coins">
               <Trans>Coins</Trans>
             </Tabs.Trigger>
-            <Tabs.Trigger value="Dobs">
+            {/* <Tabs.Trigger value="Dobs">
               <Trans>DOBs</Trans>
-            </Tabs.Trigger>
+            </Tabs.Trigger> */}
           </Tabs.List>
           <Tabs.Content value="Coins">
             <CoinListUI coinList={coinList?.assetInfo?.assets ?? []} />

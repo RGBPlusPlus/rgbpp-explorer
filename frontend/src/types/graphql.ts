@@ -178,7 +178,7 @@ export type CkbTransaction = {
 export type RgbppTransaction = {
   __typename?: 'RgbppTransaction';
   txHash: string;
-  network: 'unknown' | 'btc' | 'ckb' | 'doge';
+  network: 'btc' | 'ckb';
   timestamp: number;
   btc: {
     txid: string | null;

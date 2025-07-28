@@ -6,10 +6,12 @@ export function resolveLayerTypeFromRGBppTransaction<
     btc?: { txid: string | null };
     direction?: 'on' | 'off' | 'within' | null;
     ckbTransaction: any;
+    network:'ckb'|'btc'
   }
 >(tx: T) {
-  console.log(tx)
- 
+   // withinBTC L1 在首页是null
+  // in L1-L2 在首页是on
+  // leapoutBTC L2-L1 在首页是off
   switch (tx.direction) {
     case 'on':
       return 'l1-l2'
@@ -18,22 +20,9 @@ export function resolveLayerTypeFromRGBppTransaction<
     case 'within':
       return 'l1'
     default:
-      if (tx.btc?.txid && !tx.direction) return 'l1'
-      return 'l2'
+      // if (tx.network==='ckb' && !tx.direction) return 'l2'
+      return 'l1'
   }
 }
 
-export function resolveLayerTypeFromRGBppTransactionNew(
- txType: string,
-) {
-  switch (txType) {
-    case 'in':
-      return 'l2'
-    case 'out':
-      return 'l2-l1'
-    case 'withinBTC':
-      return 'l1'
-    default:
-      return 'l2'
-  }
-}
+

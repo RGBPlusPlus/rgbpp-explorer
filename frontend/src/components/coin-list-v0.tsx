@@ -18,54 +18,32 @@ import { XudtLogoLoader } from '@/components/xudt-logo-loader'
 import { formatBigNumber, formatNumber } from '@/lib/string/format-number'
 
 type CoinType = {
-  info: {
-    symbol: string | null
-    id: string
-    name: string | null
-    decimals: number | null
-    icon: string | null
-    tags: string[]
-  }
-  quote: {
-    totalSupply: string | null
-    holderCount: Array<{
-      network: 'ckb' | 'btc' | 'doge' | 'unknown'
-      count: number
-    }>
-    price: string | null
-    marketCap: string | null
-    volume24h: string | null
-    circulatingSupply: string | null
-    fdv: string | null
-    priceChange24h: number | null
-    txCount24h: number
-  }
+
+    firstFoundTime:string|undefined
+    holderCount:number
+    icon:string
+    id:string
+    marketCap:string
+    name:string | null
+    price:string
+    priceChange24h:string
+    tradingVolume24h:string
+    transactionCount:string
+  
 }
 
 const MarketCapRender = ({ assetInfo }: { assetInfo: CoinType }) => {
   const { i18n } = useLingui()
   const lang = i18n.locale
 
-  const quote = assetInfo.quote;
-  const info = assetInfo.info;
 
-  const decimals = info?.decimals || 0;
+
+  const decimals = 8;
   const divisor = new BigNumber(10).pow(decimals);
 
-  const processedQuote = {
-    ...quote,
-    circulatingSupply: quote?.circulatingSupply
-      ? new BigNumber(quote.circulatingSupply).dividedBy(divisor)
-      : null,
-    totalSupply: quote?.totalSupply
-      ? new BigNumber(quote.totalSupply).dividedBy(divisor)
-      : null,
-  };
-
+  
   const marketCap = formatBigNumber(
-    (!processedQuote?.marketCap || new BigNumber(processedQuote.marketCap).isLessThan(1)) && processedQuote?.price && processedQuote?.circulatingSupply
-    ? new BigNumber(processedQuote.price).multipliedBy(processedQuote.circulatingSupply)
-    : processedQuote?.marketCap || '0',
+    assetInfo.marketCap,
     2,
     lang
   );
@@ -83,25 +61,22 @@ export function CoinList<T extends CoinType>({ coins }: { coins: T[] | undefined
             <Table.Header w="200px">
               <Trans>Coin</Trans>
             </Table.Header>
-            <Table.Header w="120px">
-              <Trans>Txns(24H)</Trans>
-            </Table.Header>
             <Table.Header w="100px">
               <Trans>Holders</Trans>
             </Table.Header>
             <Table.Header w="100px">
               <Trans>Price</Trans>
             </Table.Header>
-           
+            <Table.Header w="120px">
+              <Trans>Txns(24H)</Trans>
+            </Table.Header>
             <Table.Header w="120px">
               <Trans>Volume(24H)</Trans>
             </Table.Header>
-            <Table.Header w="140px">
-              <Trans>Circulating Supply</Trans>
-            </Table.Header>
-            <Table.Header w="140px">
+           
+            {/* <Table.Header w="140px">
               <Trans>Total Supply</Trans>
-            </Table.Header>
+            </Table.Header> */}
             <Table.Header w="160px">
               <Trans>Market Cap</Trans>
             </Table.Header>
@@ -110,44 +85,38 @@ export function CoinList<T extends CoinType>({ coins }: { coins: T[] | undefined
         <Table.Body>
           {coins?.map((coin) => {
             return (
-              <Table.Row key={coin.info.id}>
+              <Table.Row key={coin.id}>
                 <Table.Cell>
                   <Link
-                    href={`/assets/coins/${coin.info.id}`}
+                    href={`/assets/coins/${coin.id}`}
                     display="flex"
                     alignItems="center"
                     gap={3}
                     color="text.link"
                     cursor="pointer"
                   >
-                    {coin.info.icon ? (
-                      <styled.img w="32px" h="32px" src={coin.info.icon} rounded="100%" />
+                    {coin.icon ? (
+                      <styled.img w="32px" h="32px" src={coin.icon} rounded="100%" />
                     ) : (
-                      <XudtLogoLoader symbol={coin.info.symbol} size={{ width: '32px', height: '32px', fontSize: '14px' }} />
+                      <XudtLogoLoader symbol={coin.name} size={{ width: '32px', height: '32px', fontSize: '14px' }} />
                     )}
-                    <TextOverflowTooltip label={coin.info.symbol}>
+                    <TextOverflowTooltip label={coin.name}>
                       <Text maxW="200px" truncate cursor="pointer">
-                        {coin.info.symbol}
+                        {coin.name}
                       </Text>
                     </TextOverflowTooltip>
                   </Link>
                 </Table.Cell>
-                <Table.Cell>{formatNumber(coin.quote.txCount24h)}</Table.Cell>
-                <Table.Cell>{formatNumber(coin.quote.holderCount.reduce((sum, holder) => sum + holder.count, 0))}</Table.Cell>
+                <Table.Cell>{formatNumber(coin.holderCount)}</Table.Cell>
                 <Table.Cell overflow={'hidden'} textOverflow={'ellipsis'}>
                   <AppTooltip 
-                    trigger={<span>${formatNumber(coin.quote.price)}</span>} 
-                    content={formatNumber(coin.quote.price)}
+                    trigger={<span>${formatNumber(coin.price)}</span>} 
+                    content={formatNumber(coin.price)}
                    />
                 </Table.Cell>
+                <Table.Cell>{formatNumber(coin.transactionCount)}</Table.Cell>
+                <Table.Cell>${formatNumber(coin.tradingVolume24h)}</Table.Cell>
                
-                <Table.Cell>${formatNumber(coin.quote.volume24h)}</Table.Cell>
-                <Table.Cell overflow={'hidden'} textOverflow={'ellipsis'}>
-                  {formatNumber(coin.quote.totalSupply, coin.info.decimals||1)}
-                </Table.Cell>
-                <Table.Cell overflow={'hidden'} textOverflow={'ellipsis'}>
-                  {formatNumber(coin.quote.totalSupply, coin.info.decimals||1)}
-                </Table.Cell>
                 <Table.Cell><MarketCapRender assetInfo={coin} /></Table.Cell>
                 {/* <Table.Cell>{coin.deployedAt ? dayjs(coin.deployedAt).format(DATE_TEMPLATE) : '-'}</Table.Cell>*/}
               </Table.Row>
@@ -165,12 +134,12 @@ export function CoinListGrid<T extends CoinType>({ coins }: { coins: T[] | undef
       {coins?.map((coin) => {
         return (
           <Link
-            href={`/assets/coins/${coin.info.id}`}
+            href={`/assets/coins/${coin.id}`}
             display="grid"
             w="100%"
             gap="16px"
             gridTemplateColumns="repeat(2, 1fr)"
-            key={coin.info.id}
+            key={coin.id}
             p="20px"
             borderBottom="1px solid"
             borderBottomColor="border.primary"
@@ -179,42 +148,35 @@ export function CoinListGrid<T extends CoinType>({ coins }: { coins: T[] | undef
             }}
           >
             <HStack w="100%" gridColumn="1/3" color="brand">
-              {coin.info.icon ? (
-                <styled.img w="32px" h="32px" src={coin.info.icon} rounded="100%" />
+              {coin.icon ? (
+                <styled.img w="32px" h="32px" src={coin.icon} rounded="100%" />
               ) : (
-                <XudtLogoLoader symbol={coin.info.symbol} size={{ width: '32px', height: '32px', fontSize: '14px' }} />
+                <XudtLogoLoader symbol={coin.name} size={{ width: '32px', height: '32px', fontSize: '14px' }} />
               )}
-              <TextOverflowTooltip label={coin.info.symbol}>
+              <TextOverflowTooltip label={coin.name}>
                 <Text maxW="200px" truncate cursor="pointer">
-                  {coin.info.symbol}
+                  {coin.name}
                 </Text>
               </TextOverflowTooltip>
             </HStack>
             {[
               {
                 label: <Trans>Holders</Trans>,
-                value: formatNumber(coin.quote.holderCount.reduce((sum, holder) => sum + holder.count, 0)),
+                value: formatNumber(coin.holderCount),
               },
               {
                 label: <Trans>Price</Trans>,
-                value: '$' + formatNumber(coin.quote.price),
+                value: '$' + formatNumber(coin.price),
               },
               {
                 label: <Trans>Txns(24H)</Trans>,
-                value: formatNumber(coin.quote.txCount24h),
+                value: formatNumber(coin.transactionCount),
               },
               {
                 label: <Trans>Volume(24H)</Trans>,
-                value: '$' + formatNumber(coin.quote.volume24h),
+                value: '$' + formatNumber(coin.tradingVolume24h),
               },
-              {
-                label: <Trans>Circulating Supply</Trans>,
-                value: formatNumber(coin.quote.circulatingSupply, coin.info.decimals||1),
-              },
-              {
-                label: <Trans>Total Supply</Trans>,
-                value: formatNumber(coin.quote.totalSupply, coin.info.decimals||1),
-              },
+             
               {
                 label: <Trans>Market Cap</Trans>,
                 value: <MarketCapRender assetInfo={coin} />, // '$' + formatNumber(coin.quote.marketCap),

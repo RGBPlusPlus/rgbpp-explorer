@@ -28,7 +28,6 @@ export default function Page() {
 
   const { holders } = useAssetHolders(params.typeHash as string)
   const { assetInfo, assetQuote } = useAssetInfo(params.typeHash as string)
-  console.log(assetQuote, assetInfo)
 
   const totalSupply = Number(assetQuote?.totalSupply) || 0
   const totalHolders = assetQuote?.holderCount?.reduce((sum: number, item: HolderCountItem) => sum + item.count, 0) || 0
@@ -82,12 +81,13 @@ export default function Page() {
                 value: Number(holder.value),
                 percentage: Number(holder.percentage),
                 rank: index + 1,
-                amount: holder.amount,
+                amount: String(holder.amount),
               }))}
               decimals={assetInfo.info.decimals||8}
               totalSupply={totalSupply}
             />
           ) : null}
+             
         </Box>
       </Box>
     </VStack>

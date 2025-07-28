@@ -124,8 +124,8 @@ export interface RGBTransaction {
   ckbTransaction: any
   txHash: string
   blockId: number
-  blockNumber: number
-  blockTimestamp: number
+  blockNumber: string|number
+  blockTimestamp: number|string
   leapDirection: string
   rgbCellChanges: number
   rgbTxid: string

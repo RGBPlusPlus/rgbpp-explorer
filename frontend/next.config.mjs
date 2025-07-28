@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    domains: ['p.magickbase.com'],
+  },
   reactStrictMode: true,
   experimental: {
     swcPlugins: [['@lingui/swc-plugin', {}]],
@@ -11,7 +14,6 @@ const nextConfig = {
     pagesBufferLength: 5,
   },
   poweredByHeader: false,
-  reactStrictMode: true,
   swcMinify: true,
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
@@ -24,7 +26,7 @@ const nextConfig = {
           {
             key: 'Content-Security-Policy',
             value:
-              "default-src 'self' https://*.rgbpp.io; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.vercel.live https://*.vercel.app https://*.magickbase.com https://*.rgbpp.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data: https:; connect-src 'self' https://*.magickbase.com  https://explorer.rgbpp.io https://vercel.live https://*.vercel.app wss://*.vercel.app  https://*.rgbpp.io/* wss://*.rgbpp.io/*; frame-src 'self' https://www.google.com https://vercel.live; worker-src 'self' blob:; base-uri 'self'; form-action 'self';",
+              "default-src 'self' https://*.rgbpp.io; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.vercel.live https://*.vercel.app https://*.magickbase.com https://*.rgbpp.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data: https:; connect-src 'self' https://*.magickbase.com https://explorer.rgbpp.io https://vercel.live https://*.vercel.app wss://*.vercel.app https://*.rgbpp.io/* wss://*.rgbpp.io/* https://mainnet-api.explorer.nervos.org; frame-src 'self' https://www.google.com https://vercel.live; worker-src 'self' blob:; base-uri 'self'; form-action 'self';",
           },
         ],
       },

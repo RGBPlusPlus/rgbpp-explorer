@@ -19,7 +19,7 @@ msgstr ""
 #~ msgstr ""
 
 #: src/components/latest-tx-list/amount.tsx:10
-#: src/components/latest-tx-list/amount.tsx:17
+#: src/components/latest-tx-list/amount.tsx:26
 msgid "-"
 msgstr "-"
 
@@ -46,7 +46,7 @@ msgstr "{0} CKB"
 msgid "{0} DOB"
 msgstr "{0} DOB"
 
-#: src/app/[lang]/assets/coins/[typeHash]/holders/page.tsx:72
+#: src/app/[lang]/assets/coins/[typeHash]/holders/page.tsx:71
 msgid "{0} Holders"
 msgstr "{0} 个持有人"
 
@@ -54,7 +54,7 @@ msgstr "{0} 个持有人"
 #~ msgid "{0} sats/vB ~ {1} sats/vB"
 #~ msgstr "{0} 聪/字节 ~ {1} 聪/字节"
 
-#: src/app/[lang]/transaction/list/page.tsx:120
+#: src/app/[lang]/transaction/list/page.tsx:80
 msgid "{0} transactions"
 msgstr "{0} 条交易"
 
@@ -103,7 +103,15 @@ msgstr "<0>探索<1><2/></1></0><3>生态系统</3>"
 msgid "${0} sats/vB ~ ${1} sats/vB"
 msgstr ""
 
-#: src/components/transaction-info.tsx:33
+#: src/components/latest-tx-list/amount.tsx:17
+msgid "1 <0>DOB</0>"
+msgstr ""
+
+#: src/components/latest-tx-list/amount.tsx:17
+#~ msgid "1 DOB"
+#~ msgstr ""
+
+#: src/components/transaction-info.tsx:31
 msgid "24H Transactions"
 msgstr "24小时交易量"
 
@@ -120,8 +128,7 @@ msgstr "地址"
 #: src/components/btc/btc-transaction-card.tsx:61
 #: src/components/holder-list/coin-holder-list.tsx:123
 #: src/components/holder-list/coin-holder-list.tsx:149
-#: src/components/latest-tx-list/rgb-tx-list.tsx:108
-#: src/components/latest-tx-list/ui.tsx:83
+#: src/components/latest-tx-list/ui.tsx:82
 msgid "Amount"
 msgstr "数量"
 
@@ -133,11 +140,11 @@ msgstr "可用"
 #~ msgid "Average Balance"
 #~ msgstr "平均余额"
 
-#: src/components/transaction-info.tsx:38
+#: src/components/transaction-info.tsx:36
 msgid "Avg. Confirmation Time"
 msgstr "平均确认时间"
 
-#: src/components/transaction-info.tsx:39
+#: src/components/transaction-info.tsx:37
 msgid "Avg. Transaction Fee"
 msgstr "平均手续费"
 
@@ -153,8 +160,8 @@ msgid "Bitcoin"
 msgstr "Bitcoin"
 
 #: src/components/latest-tx-list/rgb-tx-list.tsx:186
-msgid "Block"
-msgstr "Block"
+#~ msgid "Block"
+#~ msgstr "Block"
 
 #: src/components/block-header-btc.tsx:37
 #: src/components/block-header.tsx:37
@@ -166,7 +173,7 @@ msgstr "区块 {0}"
 #: src/components/btc/btc-transaction-card.tsx:39
 #: src/components/btc/btc-transaction-overview.tsx:41
 #: src/components/ckb/ckb-transaction-overview.tsx:39
-#: src/components/latest-tx-list/rgb-tx-list.tsx:101
+#: src/components/latest-tx-list/rgb-tx-list.tsx:110
 #: src/components/network-cards.tsx:60
 #: src/components/network-cards.tsx:93
 msgid "Block Height"
@@ -178,8 +185,8 @@ msgid "Block size"
 msgstr "区块大小"
 
 #: src/components/btc/btc-address-overview.tsx:40
-#: src/components/btc/btc-address-overview.tsx:45
-#: src/components/btc/btc-address-overview.tsx:49
+#: src/components/btc/btc-address-overview.tsx:51
+#: src/components/btc/btc-address-overview.tsx:55
 #: src/components/btc/btc-utxo-tables.tsx:96
 #: src/components/btc/btc-utxo-tables.tsx:178
 msgid "BTC"
@@ -238,15 +245,15 @@ msgid "Charts"
 msgstr "图表"
 
 #: src/components/coin-info.tsx:119
-#: src/components/coin-list.tsx:99
-#: src/components/coin-list.tsx:209
+#: src/components/coin-list.tsx:100
+#: src/components/coin-list.tsx:211
 msgid "Circulating Supply"
 msgstr "流通量"
 
 #: src/app/[lang]/explorer/ckb/info.tsx:23
 #: src/components/ckb/ckb-address-overview.tsx:40
 #: src/components/ckb/ckb-address-overview.tsx:46
-#: src/components/ckb/ckb-address-overview.tsx:52
+#: src/components/ckb/ckb-address-overview.tsx:55
 #: src/components/ckb/ckb-block-overview.tsx:65
 #: src/components/ckb/ckb-cell-tables.tsx:128
 #: src/components/footer.tsx:94
@@ -282,6 +289,7 @@ msgstr "CKB 持有者"
 msgid "CKB Txn"
 msgstr "CKB 交易"
 
+#: src/components/coin-list-v0.tsx:62
 #: src/components/coin-list.tsx:84
 msgid "Coin"
 msgstr "代币"
@@ -299,8 +307,8 @@ msgid "Coins"
 msgstr "代币"
 
 #: src/components/network-cards.tsx:127
-msgid "Coming"
-msgstr "即将推出"
+#~ msgid "Coming"
+#~ msgstr "即将推出"
 
 #: src/components/charts/coming-soon-chart.tsx:17
 #: src/components/coming-soon-text.tsx:6
@@ -317,7 +325,7 @@ msgstr "即将推出，敬请期待"
 msgid "Confirmations"
 msgstr "确认数"
 
-#: src/components/btc/btc-address-overview.tsx:42
+#: src/components/btc/btc-address-overview.tsx:48
 msgid "Confirmed"
 msgstr "已确认"
 
@@ -379,8 +387,8 @@ msgstr "DOB 合集"
 
 #: src/app/[lang]/address/[address]/assets/ckb-assets-list.tsx:32
 #: src/app/[lang]/assets/layout.tsx:29
-msgid "DOBs"
-msgstr "DOBs"
+#~ msgid "DOBs"
+#~ msgstr "DOBs"
 
 #: src/components/charts/daily-transactions-count-chart.tsx:131
 #: src/components/charts/holders-count-chart.tsx:142
@@ -402,11 +410,11 @@ msgid "DOGE Chain Transactions"
 msgstr "DOGE 链交易笔数"
 
 #: src/app/[lang]/charts/[chartId]/page.tsx:86
-#: src/app/[lang]/transaction/list/page.tsx:138
+#: src/app/[lang]/transaction/list/page.tsx:98
 msgid "Download Data"
 msgstr "下载数据"
 
-#: src/app/[lang]/explorer/btc/info.tsx:102
+#: src/app/[lang]/explorer/btc/info.tsx:103
 msgid "Drop"
 msgstr "丢弃"
 
@@ -431,7 +439,7 @@ msgstr "费率范围"
 #~ msgid "Fee Rate:<0>{0}</0>{feeUnit}/{sizeUnit}"
 #~ msgstr "费率:<0>{0}</0>{feeUnit}/{sizeUnit}"
 
-#: src/components/pagination-searchparams.tsx:43
+#: src/components/pagination-searchparams.tsx:45
 msgid "Go"
 msgstr "前往"
 
@@ -444,9 +452,11 @@ msgstr "高优先级"
 #~ msgid "Holder Summary"
 #~ msgstr ""
 
-#: src/app/[lang]/assets/coins/[typeHash]/layout.tsx:22
-#: src/components/coin-list.tsx:87
-#: src/components/coin-list.tsx:193
+#: src/app/[lang]/assets/coins/[typeHash]/layout.tsx:19
+#: src/components/coin-list-v0.tsx:65
+#: src/components/coin-list-v0.tsx:164
+#: src/components/coin-list.tsx:90
+#: src/components/coin-list.tsx:195
 msgid "Holders"
 msgstr "持有者"
 
@@ -454,6 +464,10 @@ msgstr "持有者"
 #: src/components/ckb/ckb-cell-tables.tsx:45
 msgid "Inputs ({0})"
 msgstr "输入 ({0})"
+
+#: src/app/[lang]/assets/coins/[typeHash]/transactions/page.tsx:40
+msgid "Items"
+msgstr ""
 
 #: src/components/ckb/ckb-transaction-card-with-query-in-block.tsx:20
 #~ msgid "kB"
@@ -466,8 +480,8 @@ msgid "L1"
 msgstr "L1"
 
 #: src/components/btc/btc-address-overview.tsx:56
-msgid "L1 RGB++ Assets"
-msgstr "L1 RGB++ 资产"
+#~ msgid "L1 RGB++ Assets"
+#~ msgstr "L1 RGB++ 资产"
 
 #: src/app/[lang]/explorer/btc/info.tsx:36
 msgid "L1 RGB++ Txns(24H)"
@@ -480,8 +494,8 @@ msgid "L2"
 msgstr "L2"
 
 #: src/components/ckb/ckb-address-overview.tsx:60
-msgid "L2 RGB++ Assets"
-msgstr "L2 RGB++ 资产"
+#~ msgid "L2 RGB++ Assets"
+#~ msgstr "L2 RGB++ 资产"
 
 #: src/app/[lang]/explorer/ckb/info.tsx:30
 msgid "L2 RGB++ Txns(24H)"
@@ -491,7 +505,7 @@ msgstr "L2 RGB++ 交易(24小时)"
 msgid "Latest L1 RGB++ transaction"
 msgstr "最新 L1 RGB++ 交易"
 
-#: src/app/[lang]/explorer/ckb/page.tsx:18
+#: src/app/[lang]/explorer/ckb/page.tsx:19
 msgid "Latest L2 RGB++ transaction"
 msgstr "最新 L2 RGB++ 交易"
 
@@ -503,7 +517,11 @@ msgstr "最新 L2 RGB++ 交易"
 msgid "Load failed, Please wait a moment"
 msgstr "加载失败，请稍候"
 
-#: src/app/[lang]/explorer/btc/info.tsx:90
+#: src/app/[lang]/address/[address]/transactions/ckb-tx-list.tsx:76
+msgid "Load more"
+msgstr ""
+
+#: src/app/[lang]/explorer/btc/info.tsx:91
 #: src/app/[lang]/explorer/ckb/info.tsx:67
 msgid "Low"
 msgstr "低优先级"
@@ -513,8 +531,10 @@ msgid "Mainnet"
 msgstr "主网"
 
 #: src/components/coin-info.tsx:97
-#: src/components/coin-list.tsx:105
-#: src/components/coin-list.tsx:217
+#: src/components/coin-list-v0.tsx:81
+#: src/components/coin-list-v0.tsx:181
+#: src/components/coin-list.tsx:106
+#: src/components/coin-list.tsx:219
 msgid "Market Cap"
 msgstr "市值"
 
@@ -560,7 +580,7 @@ msgstr "已经到底啦"
 msgid "No Transaction"
 msgstr "无交易"
 
-#: src/components/ckb/ckb-address-overview.tsx:49
+#: src/components/ckb/ckb-address-overview.tsx:52
 msgid "Occupied"
 msgstr "已占用"
 
@@ -592,8 +612,10 @@ msgid "Position Ratio"
 msgstr "持有比例"
 
 #: src/components/coin-info.tsx:83
-#: src/components/coin-list.tsx:90
-#: src/components/coin-list.tsx:197
+#: src/components/coin-list-v0.tsx:68
+#: src/components/coin-list-v0.tsx:168
+#: src/components/coin-list.tsx:93
+#: src/components/coin-list.tsx:199
 msgid "Price"
 msgstr "价格"
 
@@ -616,13 +638,13 @@ msgstr "RGB++ 资产"
 msgid "RGB++ Assets Holders"
 msgstr "RGB++ 资产持有人"
 
-#: src/components/charts/useCharts.ts:137
+#: src/components/charts/useCharts.ts:138
 msgid "RGB++ Assets Overview & Activity"
 msgstr "RGB++ 资产概览和交易情况"
 
 #: src/components/charts/useCharts.ts:142
-msgid "RGB++ Assets Utilization"
-msgstr "RGB++ 资产利用情况"
+#~ msgid "RGB++ Assets Utilization"
+#~ msgstr "RGB++ 资产利用情况"
 
 #: src/components/btc/btc-utxos.tsx:37
 #~ msgid "RGB++ Binding Txn on BTC"
@@ -668,8 +690,8 @@ msgstr "聪"
 
 #: src/app/[lang]/explorer/btc/info.tsx:62
 #: src/app/[lang]/explorer/btc/info.tsx:75
-#: src/app/[lang]/explorer/btc/info.tsx:86
-#: src/app/[lang]/explorer/btc/info.tsx:98
+#: src/app/[lang]/explorer/btc/info.tsx:87
+#: src/app/[lang]/explorer/btc/info.tsx:99
 #: src/components/btc/btc-block-overview.tsx:76
 #: src/components/btc/btc-block-overview.tsx:81
 msgid "sats/vB"
@@ -731,30 +753,28 @@ msgid "The number of unique addresses that hold at least one RGB++ asset"
 msgstr "持有至少一种 RGB++ 资产的地址数量，同一地址若持有多种 RGB++ 资产，只会统计一次。"
 
 #: src/components/charts/useCharts.ts:114
-msgid "The total amount of CKB occupied by RGB++ assets"
-msgstr "每类 RGB++ 资产均占用 CKB，下图展示了所有 RGB++ 资产对 CKB 的占用情况。"
+#~ msgid "The total amount of CKB occupied by RGB++ assets"
+#~ msgstr "每类 RGB++ 资产均占用 CKB，下图展示了所有 RGB++ 资产对 CKB 的占用情况。"
 
 #: src/components/charts/useCharts.ts:25
 msgid "The total number of RGB++ assets, including FT and DOB"
 msgstr "使用 RGB++ 协议发行的资产总数，比如 SEAL、STB、Nervape 等，每种资产只统计一次。"
 
 #: src/components/btc/btc-transaction-card.tsx:51
-#: src/components/latest-tx-list/rgb-tx-list.tsx:111
-#: src/components/latest-tx-list/ui.tsx:86
+#: src/components/latest-tx-list/rgb-tx-list.tsx:120
+#: src/components/latest-tx-list/ui.tsx:85
 msgid "Time"
 msgstr "时间"
 
 #: src/components/latest-tx-list/rgb-tx-list.tsx:192
-msgid "Timestamp"
-msgstr ""
+#~ msgid "Timestamp"
+#~ msgstr ""
 
-#: src/components/charts/holders-count-chart.tsx:111
-#: src/components/charts/transactions-count-chart.tsx:111
-#~ msgid "Total"
-#~ msgstr "总计"
+#: src/app/[lang]/assets/coins/[typeHash]/transactions/page.tsx:40
+msgid "Total"
+msgstr "总计"
 
-#: src/app/[lang]/assets/coins/[typeHash]/transactions/page.tsx:116
-#: src/app/[lang]/assets/coins/page.tsx:99
+#: src/app/[lang]/assets/coins/page.tsx:79
 msgid "Total {0} Items"
 msgstr "总计 {0} 项"
 
@@ -776,8 +796,8 @@ msgid "Total Number of Assets"
 msgstr "总资产数"
 
 #: src/components/charts/useCharts.ts:113
-msgid "Total Occupied CKB"
-msgstr "累计占用 CKB"
+#~ msgid "Total Occupied CKB"
+#~ msgstr "累计占用 CKB"
 
 #: src/components/charts/assets-count-chart.tsx:170
 msgid "Total RGB++ Assets"
@@ -792,12 +812,12 @@ msgid "Total RGB++ Transactions"
 msgstr "RGB++ 交易总数"
 
 #: src/components/coin-info.tsx:127
-#: src/components/coin-list.tsx:102
-#: src/components/coin-list.tsx:213
+#: src/components/coin-list.tsx:103
+#: src/components/coin-list.tsx:215
 msgid "Total Supply"
 msgstr "发行量"
 
-#: src/components/transaction-info.tsx:30
+#: src/components/transaction-info.tsx:28
 msgid "Total Transactions"
 msgstr "总交易数"
 
@@ -809,7 +829,7 @@ msgstr "RGB++ 累计交易笔数"
 msgid "Total:"
 msgstr "共计："
 
-#: src/app/[lang]/assets/coins/page.tsx:92
+#: src/app/[lang]/assets/coins/page.tsx:72
 msgid "Total: {0} Coins"
 msgstr "共计：{0} 个代币"
 
@@ -820,9 +840,9 @@ msgid "Transaction"
 msgstr "交易"
 
 #: src/app/[lang]/address/[address]/layout.tsx:78
-#: src/app/[lang]/assets/coins/[typeHash]/layout.tsx:26
+#: src/app/[lang]/assets/coins/[typeHash]/layout.tsx:23
 #: src/app/[lang]/block/btc/[hashOrHeight]/layout.tsx:40
-#: src/components/transaction-info.tsx:25
+#: src/components/transaction-info.tsx:23
 msgid "Transactions"
 msgstr "交易记录"
 
@@ -834,8 +854,8 @@ msgstr "交易记录"
 msgid "Try again"
 msgstr "再试一次"
 
-#: src/components/latest-tx-list/rgb-tx-list.tsx:97
-#: src/components/latest-tx-list/ui.tsx:74
+#: src/components/latest-tx-list/rgb-tx-list.tsx:106
+#: src/components/latest-tx-list/ui.tsx:73
 msgid "Tx hash"
 msgstr "交易哈希"
 
@@ -843,24 +863,26 @@ msgstr "交易哈希"
 msgid "Txn Fee:<0>{0} </0>{feeUnit}"
 msgstr "交易费:<0>{0} </0>{feeUnit}"
 
-#: src/components/btc/btc-address-overview.tsx:53
-#: src/components/ckb/ckb-address-overview.tsx:57
+#: src/components/btc/btc-address-overview.tsx:43
+#: src/components/ckb/ckb-address-overview.tsx:58
 msgid "Txns"
 msgstr "交易"
 
-#: src/components/coin-list.tsx:93
-#: src/components/coin-list.tsx:201
+#: src/components/coin-list-v0.tsx:71
+#: src/components/coin-list-v0.tsx:172
+#: src/components/coin-list.tsx:87
+#: src/components/coin-list.tsx:203
 #: src/components/network-cards.tsx:64
 #: src/components/network-cards.tsx:97
 msgid "Txns(24H)"
 msgstr "交易(24小时)"
 
-#: src/components/latest-tx-list/rgb-tx-list.tsx:105
-#: src/components/latest-tx-list/ui.tsx:80
+#: src/components/latest-tx-list/rgb-tx-list.tsx:114
+#: src/components/latest-tx-list/ui.tsx:79
 msgid "Type"
 msgstr "类型"
 
-#: src/components/btc/btc-address-overview.tsx:48
+#: src/components/btc/btc-address-overview.tsx:54
 #: src/components/btc/btc-transaction-overview.tsx:54
 msgid "Unconfirmed"
 msgstr "未确认"
@@ -886,6 +908,10 @@ msgstr "字节"
 #~ msgid "View All Transactions"
 #~ msgstr "查看所有交易"
 
+#: src/components/latest-tx-list/index.tsx:40
+msgid "View All Transactions →"
+msgstr ""
+
 #: src/components/view-btc-explorer.tsx:27
 msgid "View Details in BTC"
 msgstr "在BTC浏览器中查看细节"
@@ -898,8 +924,10 @@ msgstr "在 CKB 浏览器中查看详情"
 msgid "View Details in Mempool"
 msgstr "在 Mempool 中查看详情"
 
-#: src/components/coin-list.tsx:96
-#: src/components/coin-list.tsx:205
+#: src/components/coin-list-v0.tsx:74
+#: src/components/coin-list-v0.tsx:176
+#: src/components/coin-list.tsx:97
+#: src/components/coin-list.tsx:207
 msgid "Volume(24H)"
 msgstr "24小时成交额"
 

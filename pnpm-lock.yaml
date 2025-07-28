@@ -264,8 +264,8 @@ importers:
         specifier: ^4.11.2
         version: 4.11.2(react@18.3.1)
       '@magickbase/p':
-        specifier: ^0.0.5
-        version: 0.0.5(@ckb-lumos/lumos@0.23.0)(@trpc/server@11.0.0-rc.660(typescript@5.5.3))(drizzle-orm@0.42.0(@opentelemetry/api@1.9.0)(@prisma/client@5.17.0(prisma@5.17.0))(@types/pg@8.6.1)(prisma@5.17.0))(openapi-fetch@0.13.5)
+        specifier: ^0.0.6
+        version: 0.0.6(@ckb-lumos/lumos@0.23.0)(@trpc/server@11.0.0-rc.660(typescript@5.5.3))(drizzle-orm@0.42.0(@opentelemetry/api@1.9.0)(@prisma/client@5.17.0(prisma@5.17.0))(@types/pg@8.6.1)(prisma@5.17.0))(openapi-fetch@0.13.5)
       '@nervosnetwork/ckb-sdk-utils':
         specifier: ^0.109.2
         version: 0.109.3
@@ -2517,8 +2517,8 @@ packages:
     resolution: {integrity: sha512-Z7C/xXCiGWsg0KuKsHTKJxbWhpI3Vs5GwLfOean7MGyVFGqdRgBbAjOCh6u4bbjPc/8MJ2pZmK/0DLdCbivLDA==}
     engines: {node: '>=8'}
 
-  '@magickbase/p@0.0.5':
-    resolution: {integrity: sha512-4X/ieas+j9/c5KQyKe/OLtaysDBXb8vGXOyuOjgAx0aQ06h+4lVCwuj4xcRcBe6tY3+eoghUXcpk2B1quRW9jA==}
+  '@magickbase/p@0.0.6':
+    resolution: {integrity: sha512-FSrQyhoPC2fU1c76j+5R4qn3Z1pNt1ucBGc0hrw2SQ9vJlgWzvTWi+1ylC9icvKjgCOfS4Q39/yRh0yw3tlClw==}
     peerDependencies:
       '@ckb-lumos/lumos': ^0.23.0
       '@trpc/server': ^11.0.0-rc.660
@@ -12016,7 +12016,7 @@ snapshots:
 
   '@lukeed/csprng@1.1.0': {}
 
-  '@magickbase/p@0.0.5(@ckb-lumos/lumos@0.23.0)(@trpc/server@11.0.0-rc.660(typescript@5.5.3))(drizzle-orm@0.42.0(@opentelemetry/api@1.9.0)(@prisma/client@5.17.0(prisma@5.17.0))(@types/pg@8.6.1)(prisma@5.17.0))(openapi-fetch@0.13.5)':
+  '@magickbase/p@0.0.6(@ckb-lumos/lumos@0.23.0)(@trpc/server@11.0.0-rc.660(typescript@5.5.3))(drizzle-orm@0.42.0(@opentelemetry/api@1.9.0)(@prisma/client@5.17.0(prisma@5.17.0))(@types/pg@8.6.1)(prisma@5.17.0))(openapi-fetch@0.13.5)':
     dependencies:
       '@ckb-lumos/lumos': 0.23.0
       '@trpc/server': 11.0.0-rc.660(typescript@5.5.3)

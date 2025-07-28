@@ -79,14 +79,15 @@ export function useAssetInfo(assetId: string) {
 
 //   return { assetList }
 // }
-// todo 修改为分页
-export function useCoinList(pageSize = 10, pageIndex = 1) {
+export function useCoinList(pageSize = 10, pageIndex:number) {
   const { data: assetList } = trpc.rgbpp.coinList.useQuery({
-    page: 1,
-    pageSize:10,
+    page: pageIndex,
+    pageSize:pageSize,
+    // sort:'addresses_count.desc',
   })
   return { assetList }
 }
+
 export function useAssetHolders(assetId: string) {
   const { data: holders } = trpc.rgbpp.topHolders.useQuery({
     assetId,
@@ -94,6 +95,7 @@ export function useAssetHolders(assetId: string) {
 
   return { holders }
 }
+
 
 export function useAssetTransactions(assetId?: string, pageSize = 10, pageIndex = 1) {
   const { data: transactions,isLoading,error } = trpc.rgbpp.transactionList.useQuery({
@@ -112,15 +114,17 @@ export function useAddressAsset(address: string) {
   }
 }
 
-export function useBtcAddressTransactions(address: string) {
+
+
+export function useAddressTransactions(address: string,page:number,pageSize:number) {
   const {
     data:addressTransactions,
     isLoading,
     error,
   } = trpc.address.transactions.useQuery({
     address,
-    page: 1,
-    pageSize: 10,
+    page,
+    pageSize,
   })
   return {
     addressTransactions,
@@ -269,15 +273,15 @@ export function useCkbTxDetail (hash:string, options?: { enabled?: boolean }) {
     isLoading
   }
 }
-export function useRgbppTransactions() {
+export function useRgbppTransactions(page:number,pageSize:number,assetId?:string) {
   const { data, isLoading, error } = trpc.rgbpp.transactionList.useQuery({
-    assetId: '',
-    page: 1,
-    pageSize: 10,
+    assetId: assetId ?? '',
+    page,
+    pageSize
   })
 
   return {
-    data: data?.data,
+    data: data,
     isLoading,
     error
   }
