@@ -20,15 +20,6 @@ const nextConfig = {
   },
   // 添加 Netlify 支持
   trailingSlash: false,
-  // 确保 API 路由正常工作
-  async rewrites() {
-    return [
-      {
-        source: '/api/:path*',
-        destination: '/api/:path*',
-      },
-    ]
-  },
   async headers() {
     return [
       {
