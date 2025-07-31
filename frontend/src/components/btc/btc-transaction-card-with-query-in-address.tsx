@@ -11,6 +11,7 @@ interface Props {
 }
 
 export function BtcTransactionCardWithQueryInAddress({ txid, address }: Props) {
+  
   return (
     <BtcTransactionInViewQuery txid={txid}>
       {(data) => (

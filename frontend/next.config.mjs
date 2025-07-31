@@ -18,6 +18,8 @@ const nextConfig = {
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
+  // 添加 Netlify 支持
+  trailingSlash: false,
   async headers() {
     return [
       {
@@ -70,6 +72,7 @@ const nextConfig = {
     fileLoaderRule.exclude = /\.svg$/i
     return config
   },
+  
 }
 
 export default nextConfig

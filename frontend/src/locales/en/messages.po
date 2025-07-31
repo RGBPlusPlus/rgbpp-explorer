@@ -301,6 +301,10 @@ msgstr "CKB Chain Holders"
 msgid "CKB Chain Transactions"
 msgstr "CKB Chain Transactions"
 
+#: src/components/footer.tsx:122
+msgid "CKB Eco Fund"
+msgstr "CKB Eco Fund"
+
 #: src/components/holder-list/holder-summary.tsx:26
 msgid "CKB Holders"
 msgstr "CKB Holders"
@@ -472,7 +476,7 @@ msgstr "High"
 #~ msgid "Holder Summary"
 #~ msgstr "Holder Summary"
 
-#: src/app/[lang]/assets/coins/[typeHash]/layout.tsx:19
+#: src/app/[lang]/assets/coins/[typeHash]/layout.tsx:20
 #: src/components/coin-list-v0.tsx:65
 #: src/components/coin-list-v0.tsx:164
 #: src/components/coin-list.tsx:90
@@ -576,7 +580,7 @@ msgstr "Miner"
 msgid "Miner Reward"
 msgstr "Miner Reward"
 
-#: src/components/footer.tsx:113
+#: src/components/footer.tsx:116
 msgid "More Info"
 msgstr "More Info"
 
@@ -584,7 +588,7 @@ msgstr "More Info"
 msgid "Name"
 msgstr "Name"
 
-#: src/components/footer.tsx:116
+#: src/components/footer.tsx:119
 msgid "Nervos CKB"
 msgstr "Nervos CKB"
 
@@ -603,6 +607,10 @@ msgstr "No Transaction"
 #: src/components/ckb/ckb-address-overview.tsx:52
 msgid "Occupied"
 msgstr "Occupied"
+
+#: src/components/footer.tsx:102
+msgid "Official Website"
+msgstr "Official Website"
 
 #: src/components/search-bar.tsx:53
 msgid "Oops! Your search did not match any record."
@@ -717,11 +725,11 @@ msgstr "sats"
 msgid "sats/vB"
 msgstr "sats/vB"
 
-#: src/components/footer.tsx:105
+#: src/components/footer.tsx:108
 msgid "Script"
 msgstr "Script"
 
-#: src/components/footer.tsx:108
+#: src/components/footer.tsx:111
 msgid "SDK"
 msgstr "SDK"
 
@@ -860,7 +868,7 @@ msgid "Transaction"
 msgstr "Transaction"
 
 #: src/app/[lang]/address/[address]/layout.tsx:78
-#: src/app/[lang]/assets/coins/[typeHash]/layout.tsx:23
+#: src/app/[lang]/assets/coins/[typeHash]/layout.tsx:24
 #: src/app/[lang]/block/btc/[hashOrHeight]/layout.tsx:40
 #: src/components/transaction-info.tsx:23
 msgid "Transactions"
@@ -912,7 +920,7 @@ msgstr "Unconfirmed"
 msgid "Unknown"
 msgstr "Unknown"
 
-#: src/components/footer.tsx:119
+#: src/components/footer.tsx:125
 msgid "UTXO Stack"
 msgstr "UTXO Stack"
 
@@ -955,6 +963,6 @@ msgstr "Volume(24H)"
 msgid "Welcome to RGB++ Explorer"
 msgstr "Welcome to RGB++ Explorer"
 
-#: src/components/footer.tsx:102
+#: src/components/footer.tsx:105
 msgid "Whitepaper"
 msgstr "Whitepaper"

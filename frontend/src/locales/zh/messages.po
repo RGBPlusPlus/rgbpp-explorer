@@ -281,6 +281,10 @@ msgstr "CKB 链持有人"
 msgid "CKB Chain Transactions"
 msgstr "CKB 链交易笔数"
 
+#: src/components/footer.tsx:122
+msgid "CKB Eco Fund"
+msgstr ""
+
 #: src/components/holder-list/holder-summary.tsx:26
 msgid "CKB Holders"
 msgstr "CKB 持有者"
@@ -452,7 +456,7 @@ msgstr "高优先级"
 #~ msgid "Holder Summary"
 #~ msgstr ""
 
-#: src/app/[lang]/assets/coins/[typeHash]/layout.tsx:19
+#: src/app/[lang]/assets/coins/[typeHash]/layout.tsx:20
 #: src/components/coin-list-v0.tsx:65
 #: src/components/coin-list-v0.tsx:164
 #: src/components/coin-list.tsx:90
@@ -556,7 +560,7 @@ msgstr "矿工"
 msgid "Miner Reward"
 msgstr "矿工奖励"
 
-#: src/components/footer.tsx:113
+#: src/components/footer.tsx:116
 msgid "More Info"
 msgstr "更多信息"
 
@@ -564,7 +568,7 @@ msgstr "更多信息"
 msgid "Name"
 msgstr "代币"
 
-#: src/components/footer.tsx:116
+#: src/components/footer.tsx:119
 msgid "Nervos CKB"
 msgstr "Nervos CKB"
 
@@ -583,6 +587,10 @@ msgstr "无交易"
 #: src/components/ckb/ckb-address-overview.tsx:52
 msgid "Occupied"
 msgstr "已占用"
+
+#: src/components/footer.tsx:102
+msgid "Official Website"
+msgstr ""
 
 #: src/components/search-bar.tsx:53
 msgid "Oops! Your search did not match any record."
@@ -697,11 +705,11 @@ msgstr "聪"
 msgid "sats/vB"
 msgstr "聪/字节"
 
-#: src/components/footer.tsx:105
+#: src/components/footer.tsx:108
 msgid "Script"
 msgstr "脚本"
 
-#: src/components/footer.tsx:108
+#: src/components/footer.tsx:111
 msgid "SDK"
 msgstr "SDK"
 
@@ -840,7 +848,7 @@ msgid "Transaction"
 msgstr "交易"
 
 #: src/app/[lang]/address/[address]/layout.tsx:78
-#: src/app/[lang]/assets/coins/[typeHash]/layout.tsx:23
+#: src/app/[lang]/assets/coins/[typeHash]/layout.tsx:24
 #: src/app/[lang]/block/btc/[hashOrHeight]/layout.tsx:40
 #: src/components/transaction-info.tsx:23
 msgid "Transactions"
@@ -892,7 +900,7 @@ msgstr "未确认"
 msgid "Unknown"
 msgstr ""
 
-#: src/components/footer.tsx:119
+#: src/components/footer.tsx:125
 msgid "UTXO Stack"
 msgstr "UTXO Stack"
 
@@ -935,6 +943,6 @@ msgstr "24小时成交额"
 msgid "Welcome to RGB++ Explorer"
 msgstr "欢迎使用RGB++浏览器"
 
-#: src/components/footer.tsx:102
+#: src/components/footer.tsx:105
 msgid "Whitepaper"
 msgstr "白皮书"

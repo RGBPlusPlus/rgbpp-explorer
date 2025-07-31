@@ -6,8 +6,8 @@ import { BtcTransactionCardWithQueryInAddress } from '@/components/btc/btc-trans
 import { useAddressTransactions } from '@/hooks/useRgbppData'
 
 export default function BtcTxList({ address }: { address: string }) {
-  const { addressTransactions, isLoading, error } = useAddressTransactions(address,1,1)
 
+  const { addressTransactions, isLoading, error } = useAddressTransactions(address,1,1)
   if (isLoading || error || !addressTransactions?.data) {
     return null
   }
@@ -15,7 +15,7 @@ export default function BtcTxList({ address }: { address: string }) {
   return (
     <VStack w="100%" gap="30px">
       {addressTransactions.data.map((tx: any) => {
-        return <BtcTransactionCardWithQueryInAddress address={address} txid={tx.hash} key={tx.hash} />
+        return <BtcTransactionCardWithQueryInAddress address={address} txid={tx.txHash} key={tx.txHash} />
       })}
     </VStack>
   )
