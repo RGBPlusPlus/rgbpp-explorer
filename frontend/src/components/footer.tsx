@@ -1,5 +1,5 @@
 import { t } from '@lingui/macro'
-import Image from 'next/image'
+// import Image from 'next/image'
 import { Center, Flex, Grid, HStack, VStack } from 'styled-system/jsx'
 
 import { getI18nInstance } from '@/app/[lang]/appRouterI18n'
@@ -138,11 +138,10 @@ export function Footer({ lang }: { lang: string }) {
           }}
         >
           <Text opacity="0.4">Powered by</Text>
-          <Image
+
+          <img
             src="https://p.magickbase.com/favicon.ico"
             alt="magickabse"
-            width={16}
-            height={16}
             style={{
               width: '16px',
               height: '16px',

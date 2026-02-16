@@ -15,7 +15,7 @@ export default function BtcTxList({ address }: { address: string }) {
   return (
     <VStack w="100%" gap="30px">
       {addressTransactions.data.map((tx: any) => {
-        return <BtcTransactionCardWithQueryInAddress address={address} txid={tx.hash} key={tx.hash} />
+        return <BtcTransactionCardWithQueryInAddress address={address} txid={tx.txHash} key={tx.txHash} />
       })}
     </VStack>
   )

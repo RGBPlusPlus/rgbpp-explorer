@@ -452,7 +452,7 @@ msgstr "高优先级"
 #~ msgid "Holder Summary"
 #~ msgstr ""
 
-#: src/app/[lang]/assets/coins/[typeHash]/layout.tsx:19
+#: src/app/[lang]/assets/coins/[typeHash]/layout.tsx:20
 #: src/components/coin-list-v0.tsx:65
 #: src/components/coin-list-v0.tsx:164
 #: src/components/coin-list.tsx:90
@@ -840,7 +840,7 @@ msgid "Transaction"
 msgstr "交易"
 
 #: src/app/[lang]/address/[address]/layout.tsx:78
-#: src/app/[lang]/assets/coins/[typeHash]/layout.tsx:23
+#: src/app/[lang]/assets/coins/[typeHash]/layout.tsx:24
 #: src/app/[lang]/block/btc/[hashOrHeight]/layout.tsx:40
 #: src/components/transaction-info.tsx:23
 msgid "Transactions"
